@@ -308,7 +308,7 @@ function useGetUsersDataOnProblem(problemId: string) {
 				const data = userSnap.data();
 				const { solvedProblems, likedProblems, dislikedProblems, starredProblems } = data;
 				setData({
-					liked: likedProblems.includes(problemId), // likedProblems["two-sum","jump-game"]
+					liked: likedProblems.includes(problemId), 
 					disliked: dislikedProblems.includes(problemId),
 					starred: starredProblems.includes(problemId),
 					solved: solvedProblems.includes(problemId),
