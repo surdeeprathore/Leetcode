@@ -13,7 +13,7 @@ import { problems } from "@/utils/problems";
 import { useRouter } from "next/router";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import useLocalStorage from "@/components/hooks/useLocalStorage";
-import confetti from "canvas-confetti";
+// import confetti from "canvas-confetti";
 
 type PlaygroundProps = {
 	problem: Problem;
@@ -44,13 +44,13 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
 		query: { pid },
 	} = useRouter();
 
-	const triggerConfetti = () => {
-		confetti({
-			particleCount: 100,
-			spread: 70,
-			origin: { y: 0.6 }, // Adjusts where the confetti comes from
-		});
-	};
+	// const triggerConfetti = () => {
+	// 	confetti({
+	// 		particleCount: 100,
+	// 		spread: 70,
+	// 		origin: { y: 0.6 }, // Adjusts where the confetti comes from
+	// 	});
+	// };
 
 	const handleSubmit = async () => {
 		if (!user) {
@@ -77,7 +77,7 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
 					});
 
 					// Trigger confetti animation
-					triggerConfetti();
+					// triggerConfetti();
 
 					setSuccess(true);
 					setTimeout(() => {
