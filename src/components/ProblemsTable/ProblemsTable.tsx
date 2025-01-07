@@ -47,7 +47,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
 					return (
 						<tr className={`${idx % 2 == 1 ? "bg-dark-layer-1" : ""}`} key={problem.id}>
 							<th className='px-2 py-4 font-medium whitespace-nowrap text-dark-green-s'>
-				{solvedProblems.includes(problem.id) && <BsCheckCircle fontSize={"18"} width='18' />}
+								{solvedProblems.includes(problem.id) && <BsCheckCircle fontSize={"18"} width='18' />}
 							</th>
 							<td className='px-6 py-4'>
 								{problem.link ? (
@@ -120,8 +120,8 @@ function useGetProblems(setLoadingProblems: React.Dispatch<React.SetStateAction<
 
 	useEffect(() => {
 		const getProblems = async () => {
-			 
-			setLoadingProblems;
+			// fetching data logic
+			setLoadingProblems(true);
 			const q = query(collection(firestore, "problems"), orderBy("order", "asc"));
 			const querySnapshot = await getDocs(q);
 			const tmp: DBProblem[] = [];
@@ -129,7 +129,7 @@ function useGetProblems(setLoadingProblems: React.Dispatch<React.SetStateAction<
 				tmp.push({ id: doc.id, ...doc.data() } as DBProblem);
 			});
 			setProblems(tmp);
-			setLoadingProblems;
+			setLoadingProblems(false);
 		};
 
 		getProblems();
@@ -157,8 +157,6 @@ function useGetSolvedProblems() {
 
 	return solvedProblems;
 }
-
-
 
 
 
