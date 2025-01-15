@@ -1,5 +1,2 @@
-# LeetCode Clone Youtube Tutorial
-
-### Built With React, NextJS, TypeScript, TailwindCSS, Firebase
-
-# [Demo](https://youtu.be/igqiduZR-Gg)
+Technologies: React, Next.js, TypeScript, Tailwind CSS, Firebase
+Developed a fully functional LeetCode clone, providing users with the ability to practice coding challenges in a seamless interface. Utilized React and Next.js for building dynamic and fast-loading pages, TypeScript for type safety, and Tailwind CSS for a responsive and modern design. Integrated Firebase for user authentication, ensuring a secure login/logout system. The project was designed to enhance the user experience with features like problem-solving tracking and progress monitoring.
